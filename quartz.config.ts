@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
 	configuration: {
-		pageTitle: "Max Devlog",
+		pageTitle: "Devlog",
 		pageTitleSuffix: "",
 		enableSPA: true,
 		enablePopovers: true,
