@@ -37,7 +37,7 @@ Each runnable spins off into it's own goroutine so that all of the runnables can
 	go r.reconcile()
 	```
 
-3. We attain the lock, mark the group as started and mark each runnable in the group as ready to start (Keep `signalReady` in mind, it'll come up later) and add it to the runnable dispatch channel called simply `ch`. 
+3. We attain the lock, mark the group as started and mark each runnable in the group as ready to start (Keep `signalReady` in mind, it'll come up later) and add it to the runnable dispatch channel simply called `ch`. 
 
 	```go
 	r.start.Lock()
