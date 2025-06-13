@@ -49,7 +49,7 @@ Each runnable spins off into it's own goroutine so that all of the runnables can
 	r.start.Unlock()
 	```
 
-4. If there is nothing in the start queue, we simply return from `Start`. There's nothing to run, so there's nothing to do.
+4. If there is nothing in the start queue, we return from `Start`. There's nothing to run, so there's nothing to do.
 
 	```go
 	if len(r.startQueue) == 0 {
@@ -69,7 +69,7 @@ Each runnable spins off into it's own goroutine so that all of the runnables can
 
    `wg.Wait` is a blocking call that waits for the wait group to decrement back to 0, so calling `wg.Add` after doesn't make any sense—hence the panic.
 
-   So in the chance we are in shutdown, we simply continue and avoid adding the runner.
+   So in the chance we are in shutdown, we continue and avoid adding the runner.
 
 	```go
 	{
