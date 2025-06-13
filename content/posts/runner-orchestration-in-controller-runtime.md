@@ -31,7 +31,7 @@ Each runnable spins off into it's own goroutine so that all of the runnables can
             ...
 	```
 
-2. We kick off a goroutine with`r.reconcile` . This is the internal reconciler that kicks off all of the runnables. You'll see very shortly how it works.
+2. We kick off a goroutine with`r.reconcile` . This is the internal reconciler that initiates all of the runnables. You'll see very shortly how it works.
 
 	```go
 	go r.reconcile()
