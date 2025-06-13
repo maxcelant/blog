@@ -6,7 +6,7 @@ title: Controller Orchestration Model in Controller Runtime Library
 
 The `controller-runtime` library is utilized by numerous controller builders and templating engines ([Kubebuilder](https://github.com/kubernetes-sigs/kubebuilder), [Operator SDK](https://github.com/operator-framework/operator-sdk) to name a few) to standardize the management of Kubernetes controllers. It handles the lifecycle of these controllers as well as webhooks, caches, servers and more while offering a fairly simple interface to build your operator on top of through it's `Reconciler`.
 
-I've been about how it works internally and decided to start diving into how the `Manager` handles the life-cycle of all these runnables.
+I've been curious about how it works internally and decided to start diving into how the `Manager` handles the life-cycle of all these runnables.
 
 To clarify,`Runnable` is just a simple interface with a `Start` function which controllers, webhooks, caches and more all implement.
 
