@@ -6,17 +6,23 @@
       <description>Last 10 notes on maxcelant.dev</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Effective TypeScript</title>
-    <link>https://quartz.jzhao.xyz/books/effective-typescript</link>
-    <guid>https://quartz.jzhao.xyz/books/effective-typescript</guid>
-    <description>Abstractions and Type Hierarchies Prefer relying on abstractions rather than concrete classes.</description>
-    <pubDate>Sat, 14 Jun 2025 20:16:12 GMT</pubDate>
+    <title>Untitled</title>
+    <link>https://quartz.jzhao.xyz/books/Untitled</link>
+    <guid>https://quartz.jzhao.xyz/books/Untitled</guid>
+    <description></description>
+    <pubDate>Sat, 14 Jun 2025 20:17:23 GMT</pubDate>
   </item><item>
     <title>Kubernetes in Action</title>
     <link>https://quartz.jzhao.xyz/books/kubernetes-in-action</link>
     <guid>https://quartz.jzhao.xyz/books/kubernetes-in-action</guid>
     <description>Chapter 0 - StatefulSets Summary StatefulSets solve the problem of managing unique, stateful pods with stable names and persistent storage, allowing replication.</description>
-    <pubDate>Sat, 14 Jun 2025 20:14:47 GMT</pubDate>
+    <pubDate>Sat, 14 Jun 2025 20:16:46 GMT</pubDate>
+  </item><item>
+    <title>Effective TypeScript</title>
+    <link>https://quartz.jzhao.xyz/books/effective-typescript</link>
+    <guid>https://quartz.jzhao.xyz/books/effective-typescript</guid>
+    <description>Abstractions and Type Hierarchies Prefer relying on abstractions rather than concrete classes.</description>
+    <pubDate>Sat, 14 Jun 2025 20:16:12 GMT</pubDate>
   </item><item>
     <title>Apprenticeship Patterns</title>
     <link>https://quartz.jzhao.xyz/books/apprenticeship-patterns</link>
