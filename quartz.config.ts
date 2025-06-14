@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
 	configuration: {
-		pageTitle: "Devlog",
+		pageTitle: "maxcelant.dev",
 		pageTitleSuffix: "",
 		enableSPA: true,
 		enablePopovers: true,
