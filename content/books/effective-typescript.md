@@ -2,43 +2,34 @@
 title: Effective TypeScript
 ---
 
-1. Rely on abstractions and not on concrete classes.
-2. `<T extends Foo>` means `T` is a "subset" of `Foo`.
-3. JavaScript's `typeof` is **not** the same as the typescript type.
-4. Use type assertions when you know more about the type than typescript does.
-5. You can use type assertions to convert from A to B, if either is a subset of the other.
-6. Think of sets and subsets like classes and subclasses. Subclasses are usually more specific versions of their superclass.
-7. You can use type assertions when you know a value isn't null.
-8. Excess property checking does not occur with type assertions.
-9. Use function types if you have repeated function signatures.
-10. If you want to mimic an existing function type, you can use `const bar: typeof fn...`
-11. Interfaces can be augmented. Used for "declaration merging".
-12. You can extend interfaces, adding additional fields to it.
-13. If you want to create a subset of an interface, you can index into the superset using `Pick`.
-14. `keyof` gives you the union of the types of its keys.
-15. Generics are equivalent to functions for types.
-16. You constrain the parameters of a generic using `extends`.
-17. Use interfaces when you want to build on existing interfaces (expand a type).
-18. Use index signatures (`[key: string]: string`) for dynamic data, like `csv` file data.
-19. For-in loops are much slower than For-of or classic loops.
-20. `number[]` is a subtype of `readonly number[]` because it is strictly more capable. You can assign a mutable array to `readonly` but not the other way.
-21. If your function does not modify its params, declare them `readonly`.
-22. Consider using explicit annotations for object literals and fn return times. Prevents implementation errors.
-23. When you write `as const` after a value, ts will infer the narrowest possible type for it.
-24. `as const` on arrays can infer them as tuple types.
-25. You can use `instanceof` to narrow a type.
-26. You can use a tagged union to narrow a type.
-27. Typescript determines the type of a variable when it is first introduced.
-28. You can use `'key' in object` to narrow a type.
-29. Localize your use of `any`, instead of assigning a variable type with `any`, use `as any` where you need it (and know it will be okay).
-30. An arrays type can expand by adding different elements to it.
-31. `unknown` is not assignable to other types, so a type assertion is necessary.
-32. `unknown` is appropriate when you know that there will be a value but you don't know its type.
-33. You can use `instanceof` to narrow an `unknown` type.
-34. You can create your own type guards using the `foo is SomeType` as the return type.
-35. Try `type-coverage` package with `--detail` flag.
-36. You can get the return type and parameters of a function using `ReturnType<typeof fn>` and `Parameters<typeof fn>`.
-37. Use conditional types if your function should work for multiple data types while having the return type stay consistent.
-38. Prefer union of literal types over enums. Enums can get ugly when transpiled to js.
-39. Use private fields using the `#`, these are more secure than the `private` keyword.
-40. You can set inline defaults when destructuring: `const { foo = 'foo' } = obj.vars`
+**Abstractions and Type Hierarchies**
+Prefer relying on abstractions rather than concrete classes. Think in terms of sets and subsets: `<T extends Foo>` means `T` is a subset of `Foo`, just like subclasses are more specific versions of their superclass. Generics are essentially functions for types, and you constrain them using `extends`.
+
+**Type Assertions and Narrowing**
+Use type assertions when you know more than TypeScript does — for instance, to convert from one type to another if either is a subset of the other, or when you're certain a value isn’t null. Type assertions bypass excess property checks, so be intentional. Also, assertions like `as const` can help narrow down to literal or tuple types.
+
+When dealing with `unknown`, it’s not assignable to anything without a type assertion. It's useful when you expect a value but don't know its shape. You can narrow `unknown` using `instanceof`, `'key' in obj`, or a custom type guard (`foo is SomeType`).
+
+**Function Types and Utilities**
+If you repeat function signatures, define function types. To mimic an existing function type, use `typeof fn`. You can also extract a function’s return type and parameters using `ReturnType<typeof fn>` and `Parameters<typeof fn>`. Conditional types let you create functions that adapt to multiple input types and return accordingly.
+
+**Interfaces and Objects**
+Interfaces are flexible: they can be extended or even augmented (declaration merging). If you need a subset, use `Pick`. To handle dynamic data (like parsed CSVs), use index signatures such as `[key: string]: string`. For safety and clarity, annotate object literals and return types explicitly.
+
+**Loops, Arrays, and Mutability**
+For performance, avoid `for-in` loops — `for-of` or traditional loops are faster. `number[]` is a subtype of `readonly number[]`, so you can assign mutable arrays to readonly ones, but not the other way around. If a function doesn’t modify its parameters, mark them `readonly`.
+
+**Literal and Narrow Types**
+Writing `as const` after a value tells TypeScript to infer the narrowest possible type, including tuple types for arrays. This is great for reducing unwanted widening.
+
+**TypeScript vs JavaScript**
+Remember that JavaScript’s `typeof` isn't the same as TypeScript’s type system. Don’t conflate the two.
+
+**Enums, Unions, and Access Modifiers**
+Prefer unions of literal types over enums — enums transpile messily into JavaScript. When it comes to private fields, use `#` instead of `private`. It enforces privacy at runtime, not just in types.
+
+**Miscellaneous Best Practices**
+Localize your use of `any` — avoid typing entire variables as `any`; instead, use `as any` in narrow contexts where you’re confident. Arrays can widen as you add elements, so be careful. Try the `type-coverage` package with the `--detail` flag for a deep dive on what’s covered.
+
+**Destructuring Defaults**
+When destructuring objects, you can set defaults inline: `const { foo = 'foo' } = obj.vars`.

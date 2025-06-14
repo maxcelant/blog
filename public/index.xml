@@ -10,7 +10,7 @@
     <link>https://quartz.jzhao.xyz/books/kubernetes-in-action</link>
     <guid>https://quartz.jzhao.xyz/books/kubernetes-in-action</guid>
     <description>Chapter 0 - StatefulSets Summary StatefulSets solve the problem of managing unique, stateful pods with stable names and persistent storage, allowing replication.</description>
-    <pubDate>Sat, 14 Jun 2025 20:14:30 GMT</pubDate>
+    <pubDate>Sat, 14 Jun 2025 20:14:47 GMT</pubDate>
   </item><item>
     <title>Apprenticeship Patterns</title>
     <link>https://quartz.jzhao.xyz/books/apprenticeship-patterns</link>
@@ -21,7 +21,7 @@
     <title>Effective TypeScript</title>
     <link>https://quartz.jzhao.xyz/books/effective-typescript</link>
     <guid>https://quartz.jzhao.xyz/books/effective-typescript</guid>
-    <description> Rely on abstractions and not on concrete classes. &lt;T extends Foo&gt; means T is a “subset” of Foo.</description>
+    <description>Abstractions and Type Hierarchies Prefer relying on abstractions rather than concrete classes.</description>
     <pubDate>Sat, 14 Jun 2025 20:02:40 GMT</pubDate>
   </item><item>
     <title>Operating Systems, Three Easy Pieces</title>
