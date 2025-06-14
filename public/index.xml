@@ -6,11 +6,17 @@
       <description>Last 10 notes on Devlog</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>operating-systems-three-easy-pieces</title>
+    <link>https://quartz.jzhao.xyz/books/operating-systems-three-easy-pieces</link>
+    <guid>https://quartz.jzhao.xyz/books/operating-systems-three-easy-pieces</guid>
+    <description></description>
+    <pubDate>Sat, 14 Jun 2025 19:40:38 GMT</pubDate>
+  </item><item>
     <title>100 Go Mistakes and How to Avoid Them</title>
     <link>https://quartz.jzhao.xyz/books/100-go-mistakes-book</link>
     <guid>https://quartz.jzhao.xyz/books/100-go-mistakes-book</guid>
     <description>21. Incorrectly initializing slices If you know the length of your new slice, then you should set an initial capacity for it.</description>
-    <pubDate>Sat, 14 Jun 2025 19:38:13 GMT</pubDate>
+    <pubDate>Sat, 14 Jun 2025 19:40:05 GMT</pubDate>
   </item><item>
     <title>Controller Orchestration Model in Controller Runtime Library</title>
     <link>https://quartz.jzhao.xyz/posts/runner-orchestration-in-controller-runtime</link>
