@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>maxcelant.dev</title>
+      <link>https://quartz.jzhao.xyz</link>
+      <description>Last 10 notes on maxcelant.dev</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Effective TypeScript</title>
+    <link>https://quartz.jzhao.xyz/books/effective-typescript</link>
+    <guid>https://quartz.jzhao.xyz/books/effective-typescript</guid>
+    <description> Rely on abstractions and not on concrete classes. &lt;T extends Foo&gt; means T is a “subset” of Foo.</description>
+    <pubDate>Sat, 14 Jun 2025 20:02:33 GMT</pubDate>
+  </item><item>
+    <title>Operating Systems, Three Easy Pieces</title>
+    <link>https://quartz.jzhao.xyz/books/operating-systems-three-easy-pieces</link>
+    <guid>https://quartz.jzhao.xyz/books/operating-systems-three-easy-pieces</guid>
+    <description>Coming soon!.</description>
+    <pubDate>Sat, 14 Jun 2025 19:44:01 GMT</pubDate>
+  </item><item>
+    <title>Hi, I&#039;m Max👋</title>
+    <link>https://quartz.jzhao.xyz/</link>
+    <guid>https://quartz.jzhao.xyz/</guid>
+    <description>My name is Massimiliano (Max), I currently work at American Airlines as a Platform Engineer on the Kubernetes as a Platform team.</description>
+    <pubDate>Sat, 14 Jun 2025 19:42:34 GMT</pubDate>
+  </item><item>
+    <title>100 Go Mistakes and How to Avoid Them</title>
+    <link>https://quartz.jzhao.xyz/books/100-go-mistakes-book</link>
+    <guid>https://quartz.jzhao.xyz/books/100-go-mistakes-book</guid>
+    <description>21. Incorrectly initializing slices If you know the length of your new slice, then you should set an initial capacity for it.</description>
+    <pubDate>Sat, 14 Jun 2025 19:40:05 GMT</pubDate>
+  </item><item>
+    <title>Controller Orchestration Model in Controller Runtime Library</title>
+    <link>https://quartz.jzhao.xyz/posts/runner-orchestration-in-controller-runtime</link>
+    <guid>https://quartz.jzhao.xyz/posts/runner-orchestration-in-controller-runtime</guid>
+    <description>The controller-runtime library is utilized by numerous controller builders and templating engines (Kubebuilder, Operator SDK to name a few) to standardize the management of Kubernetes controllers.</description>
+    <pubDate>Fri, 13 Jun 2025 20:55:59 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
