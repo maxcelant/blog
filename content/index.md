@@ -1,5 +1,5 @@
 ---
-title: Hi There 👋
+title: Hi, I'm Max👋
 ---
 
 My name is Massimiliano (Max), I currently work at American Airlines as a Platform Engineer on the Kubernetes as a Platform team.
