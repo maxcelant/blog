@@ -1,3 +1,7 @@
+---
+title: Kubernetes in Action
+---
+
 ## Chapter 0 - StatefulSets
 ### Summary
 - StatefulSets solve the problem of managing unique, stateful pods with stable names and persistent storage, allowing replication.
