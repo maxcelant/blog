@@ -6,11 +6,17 @@
       <description>Last 10 notes on maxcelant.dev</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Untitled</title>
-    <link>https://quartz.jzhao.xyz/books/Untitled</link>
-    <guid>https://quartz.jzhao.xyz/books/Untitled</guid>
-    <description></description>
-    <pubDate>Sat, 14 Jun 2025 20:17:23 GMT</pubDate>
+    <title>Operating Systems, Three Easy Pieces</title>
+    <link>https://quartz.jzhao.xyz/books/operating-systems-three-easy-pieces</link>
+    <guid>https://quartz.jzhao.xyz/books/operating-systems-three-easy-pieces</guid>
+    <description>Introduction to Operating Systems Each process accesses its own private virtual address space (sometimes just called its address space), which the OS somehow maps onto the physical memory of the machine.</description>
+    <pubDate>Sat, 14 Jun 2025 20:23:10 GMT</pubDate>
+  </item><item>
+    <title>Crafting Interpreters</title>
+    <link>https://quartz.jzhao.xyz/books/crafting-interpreters</link>
+    <guid>https://quartz.jzhao.xyz/books/crafting-interpreters</guid>
+    <description>Chapter 4: Scanner Scans a character at a time, and figures out what kind of token each lexeme is.</description>
+    <pubDate>Sat, 14 Jun 2025 20:21:27 GMT</pubDate>
   </item><item>
     <title>Kubernetes in Action</title>
     <link>https://quartz.jzhao.xyz/books/kubernetes-in-action</link>
@@ -29,12 +35,6 @@
     <guid>https://quartz.jzhao.xyz/books/apprenticeship-patterns</guid>
     <description>Start by writing down five things you don’t know. Then, use tests as a method to explore and learn a new language.</description>
     <pubDate>Sat, 14 Jun 2025 20:04:14 GMT</pubDate>
-  </item><item>
-    <title>Operating Systems, Three Easy Pieces</title>
-    <link>https://quartz.jzhao.xyz/books/operating-systems-three-easy-pieces</link>
-    <guid>https://quartz.jzhao.xyz/books/operating-systems-three-easy-pieces</guid>
-    <description>Coming soon!.</description>
-    <pubDate>Sat, 14 Jun 2025 19:44:01 GMT</pubDate>
   </item><item>
     <title>Hi, I&#039;m Max👋</title>
     <link>https://quartz.jzhao.xyz/</link>

@@ -1,25 +1,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
-    <loc>https://quartz.jzhao.xyz/</loc>
-    <lastmod>2025-06-14T19:42:34.000Z</lastmod>
-  </url><url>
     <loc>https://quartz.jzhao.xyz/books/100-go-mistakes-book</loc>
     <lastmod>2025-06-14T19:40:05.000Z</lastmod>
-  </url><url>
-    <loc>https://quartz.jzhao.xyz/books/operating-systems-three-easy-pieces</loc>
-    <lastmod>2025-06-14T19:44:01.000Z</lastmod>
-  </url><url>
-    <loc>https://quartz.jzhao.xyz/posts/runner-orchestration-in-controller-runtime</loc>
-    <lastmod>2025-06-13T20:55:59.000Z</lastmod>
-  </url><url>
-    <loc>https://quartz.jzhao.xyz/books/effective-typescript</loc>
-    <lastmod>2025-06-14T20:16:12.000Z</lastmod>
   </url><url>
     <loc>https://quartz.jzhao.xyz/books/apprenticeship-patterns</loc>
     <lastmod>2025-06-14T20:04:14.000Z</lastmod>
   </url><url>
+    <loc>https://quartz.jzhao.xyz/books/crafting-interpreters</loc>
+    <lastmod>2025-06-14T20:21:27.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.jzhao.xyz/books/effective-typescript</loc>
+    <lastmod>2025-06-14T20:16:12.000Z</lastmod>
+  </url><url>
     <loc>https://quartz.jzhao.xyz/books/kubernetes-in-action</loc>
     <lastmod>2025-06-14T20:16:46.000Z</lastmod>
   </url><url>
-    <loc>https://quartz.jzhao.xyz/books/Untitled</loc>
-    <lastmod>2025-06-14T20:17:23.321Z</lastmod>
+    <loc>https://quartz.jzhao.xyz/books/operating-systems-three-easy-pieces</loc>
+    <lastmod>2025-06-14T20:23:10.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.jzhao.xyz/</loc>
+    <lastmod>2025-06-14T19:42:34.000Z</lastmod>
+  </url><url>
+    <loc>https://quartz.jzhao.xyz/posts/runner-orchestration-in-controller-runtime</loc>
+    <lastmod>2025-06-13T20:55:59.000Z</lastmod>
   </url></urlset>
