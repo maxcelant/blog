@@ -51,6 +51,8 @@ Is this API easy to use for my current needs?
 #### Chapter 7: Different Layer, Different Abstraction
 A common code smell is **pass-through methods** in which a method does very little except for calling an underlying method. To solve this, you need to understand the responsibilities of each class. Either expose the lower level class directly to the caller, redistribute the functionality, or merge the classes together.
 
+>![[Pasted image 20250820115135.png]]
+
 A wrapper like this can be useful in situations where you have a high level dispatcher that can call one of N number of underlying methods of the same signature. This adds functionality, unlike a simple pass-through.
 
 **Pass-through variables** are those that get drilled down, but are unused until they reach the final layer. If it changes, then all those layers need to be updated to account for it. One possible fix is to store it in an existing object so that the individual variable doesn't need to be passed down. Another approach is to introduce a context object which is shared by the system.
@@ -61,3 +63,31 @@ It is more important for a module to have a simple interface than a simple imple
 #### Chapter 9: Better Together Or Better Apart?
 There are certain indications to help decide whether two classes should be combined or if they are better kept apart. 
 
+- If information is shared, then bringing them together will decrease coupling.
+- If bringing them together simplifies the interface.
+	- There might be steps in your logic that don't actually need to be exposed as multiple objects interacting. Maybe baking them together could eliminate that interface altogether.
+
+>[!quote]
+>If the same piece of code (or code that is almost the same) appears over and over again, that’s a red flag that you haven’t found the right abstractions.
+
+A great example of a cohesive separation of classes is for the undo/redo feature for a UI text editor. Instead of baking this feature into the `TextEditor` class, we can create a `History` class that takes 1 or more `Action`, which is just an interface. The class can group these actions into a list. 
+
+```go
+type Action interface {
+  undo()
+  redo()
+}
+```
+
+This is nice because it means that history does not rely on the concrete implementation of an `Action`, it can rely on the interface which means we can have many different types of actions. 
+
+**Splitting and Joining Methods**
+Long methods are not a bad thing as long as the interface is much simpler than the implementation. Splitting up a method into a parent-child relationship can be good if the child can exist on it's own and be used in other places by other methods. 
+
+**Splitting a Method Into Two Separate Methods**
+This is rarely a good idea but if an interface is too complex because it's trying to do two unrelated things then it's best to split it up. Usually the opposite of this is much more valuable. If the two methods can't live on their own then splitting was not a good idea.
+
+#### Chapter 10: Define Errors Out of Existence 
+Exception make up 90% of software bugs. They're hard to do correctly. See if there is a way that you can gracefully handle the error such that an exception is avoided. This is very use case specific, but it's a good thought experiment for your codebase. 
+
+#### Chapter 11: Design it Twice

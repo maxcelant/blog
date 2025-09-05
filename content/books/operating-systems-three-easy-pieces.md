@@ -31,7 +31,70 @@ Sometimes people refer to the individual structure that stores information about
 
 The separation of `fork()` and `exec()` is essential in building a UNIX shell, because it lets the shell run code after the call to `fork()` but before the call to `exec()`; this code can alter the environment of the about-to-be-run program, and thus enables a variety of interesting features to be readily built.
 
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+int main() {
+    pid_t pid = fork();
+
+    if (pid < 0) {
+        perror("fork failed");
+        exit(1);
+    }
+
+    if (pid == 0) {
+        // Child process
+        // Example: alter environment before exec
+        setenv("FOO", "bar", 1);
+
+        // Replace child with program
+        char *args[] = {"/bin/ls", "-l", NULL};
+        execvp(args[0], args);
+
+        // If exec returns, it failed
+        perror("execvp failed");
+        exit(1);
+    } else {
+        // Parent process waits
+        int status;
+        waitpid(pid, &status, 0);
+        printf("Child finished with status %d\n", status);
+    }
+
+    return 0;
+}
+```
+
 When you close a file descriptor, and you open new one, it'll take that first available slot, meaning the slot that you just closed. This allows it to redirect standard out/in/err to something like a file.
+
+```c
+int main() {
+    // Normally, fd 1 is stdout.
+    printf("This goes to stdout (terminal)\n");
+
+    // Close stdout (fd 1).
+    close(STDOUT_FILENO);
+
+    // Open a file. Since fd 1 is free, open() will reuse it.
+    int fd = open("output.txt", O_CREAT | O_WRONLY | O_TRUNC, 0644);
+    if (fd < 0) {
+        perror("open failed");
+        exit(1);
+    }
+
+    // Verify: fd should be 1 (stdout slot).
+    printf("This goes to output.txt (not the terminal)\n");
+
+    // Clean up
+    close(fd);
+
+    return 0;
+}
+```
 #### Mechanism: Limited Direct Execution 
 When the OS wishes to start a program running, it creates a process entry for it in a process list, allocates some memory pages for it, loads the program code into memory (from disk), locates its entry point (i.e., the `main()` routine or something similar), jumps to it, and starts running the user’s code.
 
@@ -39,17 +102,20 @@ When a program is in **user mode**, it does not have many privileges, it can't d
 
 C system calls are handwritten in Assembly. They need to carefully handle the process arguments, return values and the hardware specific trap instruction.
 
+>[!bug] Kernel Stack
+>The kernel stack is nothing more than a reserved per process memory space for kernel specific bookkeeping. When we trap into kernel mode, the CPU will push specific process information onto the kernel stack like the PC, user stack pointer, etc.
+
 When a trap instruction is triggered, important process information is pushed onto the kernel stack (like program counter, flags, etc) for the duration of the kernel mode, once return-from-trap is called, those get popped off the stack.
 
->[!tip] 
+>[!hint]
 >Think of it like a trapdoor to another control mode. 
 
 The OS sets up a **trap table** at boot time and tells the CPU its location so that it can tell the hardware which code to run when a specific trap is called using a **trap handler**, which are just special instructions. 
 
-> [!tip]
+> [!hint] 
 > We can think of what the OS is doing as "baby-proofing" the room to ensure the user doesn't do anything it shouldn't.
 
-Think of the trap table as a key-value store where the key is a the trap number and the value is a function pointer to the trap handler.
+Think of the trap table as a key-value store, where the key is a the trap number and the value is a function pointer to the trap handler.
 
 Programs are interrupted intermittently so that the OS can regain control and do what it wants, like give control to another process. Each process gets its own kernel stack. When context switching, we save critical data of one process into its kernel stack, then move the CPU stack pointer the new processes kernel stack. 
 
@@ -64,14 +130,14 @@ Scheduling policies are sometimes called **disciplines**. The collective of proc
 
 **Response time** is the time from when a job enters the system to when its first scheduled.
 
-Response time and Turn around time are a trade-off, you can't really have both with a simple scheduler. You either share the CPU or you run a job to completion.
+Response time and turn around time are a trade-off, you can't really have both with a simple scheduler. You either share the CPU or you run a job to completion.
 
 **Convoy effect**, where a number of relatively-short potential consumers of a resource get queued behind a heavyweight resource consumer. 
 
-Preemption is the idea that the scheduler can context switch.
+**Preemption** is the idea that the scheduler can context switch.
 
 There are some scheduling algorithms (in increasing complexity):
-- First In First Out
+- FIFO
 - Shortest Job First
 - Shortest Time-to-Completion First (Preemptive)
 	- When a new job enters, it determines which has shortest turnaround time and runs that to completion.
@@ -303,4 +369,11 @@ If a system doesn't have enough space to optimally schedule pages within the con
 
 >[!tip] Seg Faults
 >A segmentation fault occurs because a null pointer references address 0. We look that up in the TLB, get a cache miss. We then consult the page table and see that VPN 0 is marked as invalid, thus resulting in the OS terminating the program.
+
+Each process gets its own virtual address space. Part of it is user space (accessible by the *process*), and part of it is kernel space (only accessible by the OS). The kernel code and data are mapped to the same range for all processes in virtual memory. This doesn't mean that there's a copy of kernel space for each process! It's the same physical memory! 
+
+The kernel almost acts as a library to the user process. Always in memory. Accessible only when allowed (through syscalls).
+
+
+
 
