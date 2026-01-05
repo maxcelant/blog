@@ -1,8 +1,7 @@
 ---
-title: Go Proxy Project - 12/26/25
+title: Go Proxy Project - 12/26/2025
 ---
 
-#### Go Proxy Project — 12/26/25
 I'm working on my own dynamically configurable reverse HTTP proxy in Go. It's been a passion project that I've been sitting on for awhile and finally decided to give more attention to. This blog will serve to give updates on the progress of the project and some of the challenges that I'm facing.
 
 At a high level, the idea is to allow the user to send the proxy configuration updates which consist of apps with routes and clusters. Allowing them (or some sort of controller), to dynamically update upstreams.
